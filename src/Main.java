@@ -11,7 +11,6 @@
  * v customerAccountNumber random generator
  * customer.class ~constructor
  *
- *
  *Car.java
  * car.class ~constructor
  * -models:
@@ -26,6 +25,23 @@
  *
  * -Color:
  * --Metallic paint option for $650.00
+ * --red
+ * --blue
+ * --silver
+ * --green
+ * --black
+ *
+ *
+ * Calculations.java
+ * -trade-in:
+ * --if 2000 or lower 1,000
+ * --if 2001 or 2005 2,000
+ * --if 2006-2010 4,000
+ * --if 2012-2016 6,000
+ * --if 2017-2020 10,000
+ * taxes = 6%
+ * cashBuyer = -750.00
+ * financing at 7%
  *
  */
 
