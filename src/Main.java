@@ -2,6 +2,7 @@
  * Planing / mapping out the project
  *
  *main.java
+ * main.class
  * layout.class
  *
  *Customer.java
@@ -13,11 +14,6 @@
  *
  *Car.java
  * car.class ~constructor
- * -models:
- * --540 $27,700 base
- * --560 $32,500
- * --570 $36,000
- * --580 $44,000
  *
  * -Package:
  * --A $2,200 available for all models
@@ -30,6 +26,19 @@
  * --silver
  * --green
  * --black
+ *
+ *-models:
+ *s40.java
+ * $27,700 base
+ *
+ *s60.java
+ * $32,500
+ *
+ *s70.java
+ * $36,000
+ *
+ *s80.java
+ * $44,000
  *
  *
  * Calculations.java
