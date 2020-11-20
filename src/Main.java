@@ -75,7 +75,8 @@ public class Main {
         JFrame frame= new JFrame();
         frame.setTitle("cars");
         frame.pack();
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setSize(1500, 1000);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
