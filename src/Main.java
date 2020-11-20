@@ -62,27 +62,10 @@ import java.awt.event.*;
 public class Main {
 
     public static void main(String[] args){
-
-        layout();
-
-
+        //creating a new layout
+        Layout newLayout = new Layout();
+        newLayout.layout();
     }
 
 
-
-    private static void layout(){
-        // Create frame with title Registration Demo
-        JFrame frame= new JFrame();
-        frame.setTitle("Cars that go");
-        frame.pack();
-        frame.setSize(1500, 1000);
-        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
-        //making sample customer with random number generator
-        Customer newCustomer = new Customer("bob", "bob street", 19992939);
-        System.out.println(newCustomer);
-    }
 }
