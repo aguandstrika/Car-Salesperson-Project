@@ -65,6 +65,7 @@ public class Main {
         //creating a new layout
         Layout newLayout = new Layout();
         newLayout.layout();
+
     }
 
 
