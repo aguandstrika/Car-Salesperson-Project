@@ -73,7 +73,7 @@ public class Main {
     private static void layout(){
         // Create frame with title Registration Demo
         JFrame frame= new JFrame();
-        frame.setTitle("cars");
+        frame.setTitle("Cars that go");
         frame.pack();
         frame.setSize(1500, 1000);
         //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
