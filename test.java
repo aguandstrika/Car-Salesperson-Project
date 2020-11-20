@@ -32,6 +32,10 @@ public class test implements AdjustmentListener, ActionListener {
         buttonFour.setText("Woof");
 
         buttonOne.addActionListener(this);
+        buttonTwo.addActionListener(this);
+        buttonThree.addActionListener(this);
+        buttonFour.addActionListener(this);
+
 
         //making the frame/ outline
         JFrame frame = new JFrame();
@@ -54,7 +58,7 @@ public class test implements AdjustmentListener, ActionListener {
         paneltwo.setPreferredSize(new Dimension(800,100));
 
         //
-       paneltwo.setVisible(false);
+         paneltwo.setVisible(false);
 
 
         //adding to frame
@@ -80,10 +84,21 @@ public class test implements AdjustmentListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==buttonOne){
-            //paneltwo.setEnabled(false);
-            paneltwo.setBackground(Color.PINK);
             paneltwo.setVisible(true);
-            System.out.println("press");
+            System.out.println("visible");
+        }
+        if (e.getSource()==buttonTwo){
+            paneltwo.setBackground(Color.PINK);
+            System.out.println("pink");
+        }
+
+        if (e.getSource()==buttonThree){
+            paneltwo.setBackground(Color.LIGHT_GRAY);
+            System.out.println("gray");
+        }
+        if (e.getSource()==buttonFour){
+            paneltwo.setBackground(Color.ORANGE);
+            System.out.println("orane");
         }
 
     }
