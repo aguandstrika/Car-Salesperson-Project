@@ -1,60 +1,97 @@
 import javax.swing.*;
+import javax.swing.colorchooser.ColorChooserComponentFactory;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-// the layout / Structure of the program
-public class Layout {
+// the layout Structure of the program
+public class Layout{
 
-    public static void layout(){
-        //addCustomer();
+    //verbs
+    JFrame frame;
+    JPanel panel;
+    JLayeredPane glassPanel;
+    JPanel userInFoPanel;
+    JButton button;
+    JRadioButton radioButton;
+    JTextField textField;
+    JTextField firstNameInput;
+    JTextField lastNameInput;
+    JLabel userID;
 
-        JLabel label = new JLabel(); // creating label
-
-        label.setHorizontalTextPosition(JLabel.CENTER);
-        label.setVerticalTextPosition(JLabel.TOP);
-        label.setBackground(Color.pink);
-        label.setText("Welcome to Cars That Go"); // welcome label
 
 
-        JFrame frame = new JFrame(); //build a frame
-        frame.setTitle("Cars That Go"); // Title
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close program
-        frame.setResizable(true);// allow resize
-        frame.setSize(1500, 1000); // Setting dimensions
-        frame.setVisible(true); // Making frame visible
+    public void layout() {
 
-        ImageIcon image = new ImageIcon("car.png"); // Icon image
-        frame.setIconImage(image.getImage());// adding icon image to the frame
-        frame.getContentPane().setBackground(Color.lightGray);
 
-        frame.add(label);
+        //user ID
+        userID = new JLabel("ID");
+        userID.setOpaque(true);
+        userID.setSize(210,50);
+        userID.setText("random id number");
+        userID.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+
+        //first and last name
+        firstNameInput = new JTextField("Fist Name: ", 10);
+        lastNameInput = new JTextField("Last Name: ", 10);
+        firstNameInput.setOpaque(true);
+        lastNameInput.setOpaque(true);
+        firstNameInput.setSize(200,50);
+        lastNameInput.setSize(200,50);
+        firstNameInput.setAlignmentX(Component.LEFT_ALIGNMENT);
+        lastNameInput.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+
+
+        // first panel user info
+        userInFoPanel = new JPanel();
+        //userInFoPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        userInFoPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+        userInFoPanel.setMaximumSize(new Dimension(960, 60));
+        userInFoPanel.setBackground(Color.PINK);
+        userInFoPanel.add(firstNameInput);
+        userInFoPanel.add(lastNameInput);
+        userInFoPanel.add(userID);
+
+        // master panel
+        panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.LINE_AXIS));
+        panel.add(Box.createRigidArea(new Dimension(2,4)));
+        panel.add(userInFoPanel);
+
+
+        //making the frame
+        frame = new JFrame();
+        frame.setTitle("Cars That Go");
+        frame.setSize(960,840);
+        frame.setResizable(true);
+        frame.setBackground(Color.ORANGE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
+
+
+        //Setting frame to visible
+        frame.setVisible(true);
+        addCustomer();
+
+    }
+
+    public void addCustomer(){
+
+        //making sample customer with random number generator
+        Customer newCustomer = new Customer("bob", "bob street", 19992939);
+        System.out.println(newCustomer);
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public static void addCustomer(){
+//    public static void addCustomer(){
 //
-//    //making sample customer with random number generator
-//    Customer newCustomer = new Customer("bob", "bob street", 19992939);
-//    System.out.println(newCustomer);
-//
-//}
+//        //making sample customer with random number generator
+//        Customer newCustomer = new Customer("bob", "bob street", 19992939);
+//        newCustomer.customerAccountNumber();
+//        System.out.println(newCustomer);
+//    }
 
 }

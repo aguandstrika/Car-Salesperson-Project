@@ -75,4 +75,8 @@ public class Customer{
                 ", Phone Number: " + customerPhoneNumber + '\n' +
                 ", Account Number: " + customerAccountNumber + "-" + customerUserName;
     }
+
+    public void customerAccountNumber() {
+     System.out.println(customerAccountNumber +"-"+ customerUserName);
+    }
 }

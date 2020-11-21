@@ -53,20 +53,11 @@
  * financing at 7%
  *
  */
-import javax.swing.*;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.*;
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //creating a new layout
         Layout newLayout = new Layout();
         newLayout.layout();
-
     }
-
-
 }
