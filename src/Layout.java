@@ -10,6 +10,7 @@ public class Layout{
     //verbs
     JFrame frame;
     JPanel panel;
+    JPanel aderessPanel;
     JLayeredPane glassPanel;
     JPanel userInFoPanel;
     JButton button;
@@ -17,6 +18,8 @@ public class Layout{
     JTextField textField;
     JTextField firstNameInput;
     JTextField lastNameInput;
+    JTextField phoneNumberInput;
+    JTextField adderessInput;
     JLabel userID;
 
 
@@ -28,8 +31,14 @@ public class Layout{
         userID = new JLabel("ID");
         userID.setOpaque(true);
         userID.setSize(210,50);
-        userID.setText("random id number");
+        userID.setText("random id number"); //I'm trying to figure out how to add the random number generator from customer.java
         userID.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        //phone Number
+        phoneNumberInput = new JTextField("Phone Number: ",10);
+        phoneNumberInput.setOpaque(true);
+        phoneNumberInput.setSize(200,50);
+        phoneNumberInput.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 
         //first and last name
@@ -42,24 +51,36 @@ public class Layout{
         firstNameInput.setAlignmentX(Component.LEFT_ALIGNMENT);
         lastNameInput.setAlignmentX(Component.LEFT_ALIGNMENT);
 
+        adderessInput = new JTextField("Adderese:", 80);
+        adderessInput.setOpaque(true);
+        adderessInput.setSize(300,50);
+        adderessInput.setAlignmentX(Component.LEFT_ALIGNMENT);
 
+        aderessPanel = new JPanel();
+        aderessPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+        aderessPanel.setMaximumSize(new Dimension(960, 60));
+        aderessPanel.setBackground(Color.PINK);
+        aderessPanel.add(adderessInput);
 
         // first panel user info
         userInFoPanel = new JPanel();
         //userInFoPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         userInFoPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+
         userInFoPanel.setMaximumSize(new Dimension(960, 60));
         userInFoPanel.setBackground(Color.PINK);
         userInFoPanel.add(firstNameInput);
         userInFoPanel.add(lastNameInput);
+        userInFoPanel.add(phoneNumberInput);
         userInFoPanel.add(userID);
+        userInFoPanel.add(aderessPanel);
 
         // master panel
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.LINE_AXIS));
-        panel.add(Box.createRigidArea(new Dimension(2,4)));
+        panel.add(Box.createRigidArea(new Dimension(4,4)));
         panel.add(userInFoPanel);
-
+        //panel.add(aderessPanel);
 
         //making the frame
         frame = new JFrame();
