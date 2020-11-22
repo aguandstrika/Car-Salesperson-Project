@@ -1,8 +1,5 @@
 import javax.swing.*;
-import javax.swing.colorchooser.ColorChooserComponentFactory;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 // the layout Structure of the program
 public class Layout{
@@ -15,7 +12,8 @@ public class Layout{
     JPanel panelThree;
     JPanel panelFour;
     JLayeredPane glassPanel;
-    JPanel userInFoPanel;
+    JPanel innerPanelOne;
+    JPanel panelOne;
     JButton button;
     JRadioButton radioButton;
     JTextField textField;
@@ -42,6 +40,9 @@ public class Layout{
         phoneNumberInput.setSize(200,50);
 
 
+
+
+
         //first and last name
         firstNameInput = new JTextField("Fist Name: ", 20);
         lastNameInput = new JTextField("Last Name: ", 20);
@@ -50,27 +51,41 @@ public class Layout{
         firstNameInput.setSize(200,100);
         lastNameInput.setSize(200,100);
 
-        firstNameInput.setHorizontalAlignment(SwingConstants.LEFT);
+        innerPanelOne = new JPanel();
+        innerPanelOne.setSize(960, 150);
+        innerPanelOne.setLayout(new GridLayout(1,2));
+        //innerPanelOne.setLayout(new GridLayout());
+        innerPanelOne.add(firstNameInput,lastNameInput);
 
 
+
+
+
+
+        // adderess input
         adderessInput = new JTextField("Adderese:", 80);
         adderessInput.setOpaque(true);
         adderessInput.setSize(900,50);
-
+        // adderess panel
         aderessPanel = new JPanel();
         aderessPanel.setMaximumSize(new Dimension(960, 60));
         aderessPanel.setBackground(Color.PINK);
         aderessPanel.add(adderessInput);
 
         // first panel user info
-        userInFoPanel = new JPanel();
-        userInFoPanel.setMaximumSize(new Dimension(960, 50));
-        userInFoPanel.setBackground(Color.PINK);
-        userInFoPanel.add(firstNameInput);
-        userInFoPanel.add(lastNameInput);
-        userInFoPanel.add(phoneNumberInput);
-        userInFoPanel.add(userID);
-        userInFoPanel.add(aderessPanel);
+        panelOne = new JPanel();
+        panelOne.setMaximumSize(new Dimension(960, 50));
+        panelOne.setBackground(Color.PINK);
+        //panelOne.add(firstNameInput);
+        //panelOne.add(lastNameInput);
+        panelOne.add(innerPanelOne);
+        panelOne.add(phoneNumberInput);
+        panelOne.add(userID);
+        panelOne.add(aderessPanel);
+
+
+
+        //userInFoPanel.setLayout(new BoxLayout(userInFoPanel,BoxLayout.Y_AXIS));
 
 
         /**********************End of Panel/ portion ome**********************/
@@ -134,7 +149,7 @@ public class Layout{
         frame.setResizable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.add(panel);
-        frame.add(userInFoPanel);
+        frame.add(panelOne);
         frame.add(panelTwo);
         frame.add(panelThree);
         frame.add(panelFour);
